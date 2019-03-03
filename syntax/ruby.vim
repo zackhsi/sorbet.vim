@@ -14,4 +14,4 @@ syntax match Sig "\<sig\>" nextgroup=SigBlock skipwhite
 
 hi def link SigBlockDelimiter rubyDefine
 
-let b:sorbet_syntax = 'ruby'
+let b:sorbet_syntax = 1
