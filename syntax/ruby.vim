@@ -1,5 +1,3 @@
-" Use b:sorbet_syntax instead of b:current_syntax to avoid collisions with
-" vim-ruby.
 if exists('b:sorbet_syntax')
   finish
 endif
@@ -13,5 +11,9 @@ syntax cluster rubyNotTop add=SigBlock
 syntax match Sig "\<sig\>" nextgroup=SigBlock skipwhite
 
 hi def link SigBlockDelimiter rubyDefine
+
+" Match vim-ruby:
+" https://github.com/vim-ruby/vim-ruby/commit/19c19a54583c3e7c07dce18b844ae104695c41d7.
+syntax match rubyMagicComment "\c\%<10l#\s*\zs\%(typed\):" contained nextgroup=rubyBoolean skipwhite
 
 let b:sorbet_syntax = 1
